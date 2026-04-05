@@ -17,8 +17,7 @@ Pada Posttest 3 ini, proyek **Sistem Informasi Pengelolaan Kursus Mengemudi** di
 ### 1. Penerapan Jenis Inheritance
 Tipe *Inheritance* yang digunakan dalam program ini adalah **Hierarchical Inheritance** (Pewarisan Hierarkis). Satu kelas induk (*Superclass*) menurunkan sifatnya ke beberapa kelas anak (*Subclass*) yang berbeda-beda.
 
-### 2. Superclass dan Subclass (Poin Plus)
-Syarat minimal untuk poin dasar adalah 2 *subclass*. Namun, **program ini mengimplementasikan 3 Subclass untuk mendapatkan Poin Plus**.
+### 2. Superclass dan Subclass
 
 * **Superclass:** `KendaraanKursus` (Menyimpan atribut umum seperti `platNomor`, `merk`, dan `kategoriSIM`).
 * **Subclass 1:** `MobilManual` (Mewarisi `KendaraanKursus` dengan tambahan atribut unik `kondisiKopling` untuk kursus SIM A).
