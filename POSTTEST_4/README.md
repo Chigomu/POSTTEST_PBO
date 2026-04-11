@@ -12,7 +12,7 @@ Pada Posttest 4 ini, sistem menerapkan konsep dasar **Polymorphism**. Modul prog
 
 ---
 
-## Pemenuhan Instruksi & Poin Plus
+## Pemenuhan Instruksi
 
 ### 1. Penerapan Method Overloading
 * **Pada Class `SiswaMengemudi` (Metode `aturJadwal`):** Terdapat parameter `String hari` dan versi lain dengan `String hari, String jam` untuk mengakomodasi jadwal yang spesifik maupun yang masih fleksibel.
