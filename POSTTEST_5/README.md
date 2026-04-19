@@ -1,4 +1,4 @@
-# Laporan Posttest 4 - Praktikum Pemrograman Berorientasi Objek
+# Laporan Posttest 5 - Praktikum Pemrograman Berorientasi Objek
 
 ## Identitas
 **Nama:** Febrian Pratama Saputra  
@@ -7,17 +7,20 @@
 
 ---
 
-## Deskripsi Pembaruan (Posttest 4)
-Pada Posttest 4 ini, sistem menerapkan konsep dasar **Polymorphism**. Modul program dipisah ke dalam beberapa file mandiri agar terstruktur, dan fitur-fitur Java modern (Java 21/23) seperti *instance main methods* dan *pattern matching for switch* tetap dipertahankan.
+## Deskripsi Pembaruan (Posttest 5)
+Sistem Informasi Pengelolaan Kursus Mengemudi kembali direstrukturisasi dengan menerapkan konsep tingkat lanjut OOP: **Abstract Class** dan **Interface**. Pembaruan difokuskan pada manajemen armada kendaraan karena sifatnya yang mewajibkan spesialisasi fungsional di dunia nyata.
 
 ---
 
 ## Pemenuhan Instruksi
 
-### 1. Penerapan Method Overloading
-* **Pada Class `SiswaMengemudi` (Metode `aturJadwal`):** Terdapat parameter `String hari` dan versi lain dengan `String hari, String jam` untuk mengakomodasi jadwal yang spesifik maupun yang masih fleksibel.
-* **Pada Class `Instruktur` (Metode `tambahSiswa`):** Terdapat versi tanpa argumen (tambah 1 siswa) dan versi integer `(int jumlah)` jika beban ajar bertambah dalam bentuk rombongan.
+### 1. Penerapan Abstract Class & Abstract Method
+* **Abstract Class:** `KendaraanKursus` diubah dari kelas induk standar (Superclass) menjadi kelas abstrak (`public abstract class KendaraanKursus`). Hal ini dilakukan agar objek "Kendaraan" generik tidak dapat diinstansiasi secara langsung; sistem wajib menspesifikasikan apakah itu Manual, Matic, atau Truk.
+* **Abstract Method:** Terdapat metode `public abstract String cekKondisi();` di dalam kelas abstrak tersebut. Setiap tipe kendaraan (*subclass*) dipaksa secara kode untuk membuat cara/laporan pengecekan kondisinya masing-masing.
 
-### 2. Penerapan Method Overriding 
-Fungsi `getInfo()` dan `cekKondisi()` diinisiasi di kelas induk `KendaraanKursus`. Kelas anak (`MobilManual`, `MobilMatic`, `TrukInstruksi`) melakukan override untuk menambahkan informasi teknis spesifik (seperti CVT atau Kopling).
-Keuntungan Overriding sangat terlihat pada `Main.java` bagian **Read Kendaraan**, dimana kode pembacaan *ArrayList* tidak lagi membutuhkan blok *switch case / instanceof* yang panjang untuk menentukan jenis mobil yang akan diprint datanya.
+### 2. Penerapan Interface
+* **Class Interface:** `PerawatanKendaraan` (Berisi kontrak standarisasi manajemen pemeliharaan inventaris armada).
+* **Minimal 2 Method dalam Interface:**
+    1. `void jadwalkanServis(String tanggal);`
+    2. `String cekJadwalServis();`
+* **Implementasi Interface:** Diimplementasikan oleh kelas abstrak `KendaraanKursus` sehingga semua *subclass* (Mobil Manual, Matic, Truk) otomatis dapat menggunakan metode *getter/setter* untuk mendaftarkan armada mereka ke jadwal perbaikan bengkel terdekat (dapat dilihat melalui Menu "Lihat Kendaraan" dan "Jadwalkan Servis").
